@@ -1,0 +1,10 @@
+name: BedWarsHub
+author: QuadrixYT & quele
+version: 1.0
+depend:
+  - CloudNet-Bridge
+main: eu.hypetime.spigot.bedwarshub.BedWarsHub
+
+commands:
+  set:
+    description: Set Location Command

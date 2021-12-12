@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'eu.hypetime.spigot'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven {
+        url 'https://repo.cloudnetservice.eu/repository/releases/'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+    flatDir {
+        dirs 'build/libs'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    compileOnly "org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT"
+    compileOnly group: 'com.github.juliarn', name: 'npc-lib', version: 'development-SNAPSHOT'
+    compileOnly("de.dytanic.cloudnet:cloudnet-driver:3.4.0-RELEASE")
+    compileOnly('de.dytanic.cloudnet:cloudnet-cloudperms:3.4.0-RELEASE')
+}
+jar {
+    compileJava.options.encoding = 'UTF-8'
+    archiveBaseName.set("BedWarsHub")
+    archiveClassifier.set("SNAPSHOT")
+    archiveVersion.set("1.0")
+}
+
+test {
+    useJUnitPlatform()
+}
