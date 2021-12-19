@@ -1,10 +1,7 @@
 package eu.hypetime.spigot.bedwarshub;
 
 import eu.hypetime.spigot.bedwarshub.commands.SetCommand;
-import eu.hypetime.spigot.bedwarshub.listener.BuildListener;
-import eu.hypetime.spigot.bedwarshub.listener.ChatListener;
-import eu.hypetime.spigot.bedwarshub.listener.JoinListener;
-import eu.hypetime.spigot.bedwarshub.listener.QuitListener;
+import eu.hypetime.spigot.bedwarshub.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -30,6 +27,8 @@ public class BedWarsHub extends JavaPlugin {
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new ChatListener(), this);
         pluginManager.registerEvents(new QuitListener(), this);
+        pluginManager.registerEvents(new LeaveItemListener(), this);
+
     }
 
     private void registerCommands() {
