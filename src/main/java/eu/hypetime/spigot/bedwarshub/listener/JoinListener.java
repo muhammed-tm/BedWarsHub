@@ -1,5 +1,6 @@
 package eu.hypetime.spigot.bedwarshub.listener;
 
+import eu.hypetime.spigot.bedwarshub.utils.Inventories;
 import eu.hypetime.spigot.bedwarshub.utils.ScoreAPI;
 import eu.hypetime.spigot.bedwarshub.utils.WarpAPI;
 import org.bukkit.Bukkit;
@@ -18,6 +19,7 @@ public class JoinListener implements Listener {
         event.setJoinMessage(null);
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 2F, 1F); //activate when halloween is over
         WarpAPI.tpWarp(player, "Spawn");
+        Inventories.mainInventory(player);
 
         for (Player all : Bukkit.getOnlinePlayers())
             ScoreAPI.setScoreboard(all);
